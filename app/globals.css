@@ -1,0 +1,427 @@
+:root {
+  --paper: #f7f6f2;
+  --card: #ffffff;
+  --ink: #1c1b19;
+  --ink-soft: #55514b;
+  --line: #e2ded5;
+  --line-strong: #d2cdc1;
+  --accent: #9a2a2a;
+  --accent-soft: #f3e7e7;
+  --ok: #2f6f4f;
+  --shadow: 0 1px 2px rgba(28, 27, 25, 0.06), 0 6px 18px rgba(28, 27, 25, 0.05);
+  --serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP",
+    Georgia, serif;
+  --sans: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* ---- ヘッダ（マストヘッド） ---- */
+.masthead {
+  border-bottom: 1px solid var(--line-strong);
+  background: var(--card);
+}
+.masthead-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.brand .mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 5px;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 17px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(3px);
+}
+.brand .name {
+  font-family: var(--serif);
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+.brand .sub {
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+.masthead-meta {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  text-align: right;
+  flex-shrink: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 560px) {
+  .masthead-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .masthead-meta {
+    text-align: left;
+  }
+  .brand .sub {
+    display: none;
+  }
+  .brand .name {
+    font-size: 20px;
+  }
+}
+
+/* ---- レイアウト ---- */
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 28px 24px 56px;
+}
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 12px;
+}
+.section-label h1 {
+  font-family: var(--serif);
+  font-size: 20px;
+  margin: 0;
+  font-weight: 700;
+}
+.section-label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.lead-note {
+  margin: 0 0 22px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  max-width: 640px;
+}
+
+/* ---- パネル ---- */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+/* ---- ドロップゾーン ---- */
+.dropzone {
+  border: 1.5px dashed var(--line-strong);
+  border-radius: 10px;
+  background: #fbfaf7;
+  padding: 40px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.dropzone:hover {
+  border-color: var(--ink-soft);
+}
+.dropzone.over {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.dz-icon {
+  font-size: 22px;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+.dz-main {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.dz-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+/* ---- サンプルリンク ---- */
+.sample-links {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.sample-title {
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.sample-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 8px;
+}
+.sample-link {
+  font-size: 13px;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 6px 14px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.sample-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.sample-hint {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.inline-error {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/* ---- パネルヘッダ（ファイル名） ---- */
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.filechip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  background: #fbfaf7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 12px;
+  word-break: break-all;
+}
+.filechip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+  flex-shrink: 0;
+}
+.link-btn {
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  flex-shrink: 0;
+}
+.link-btn:hover {
+  color: var(--ink);
+}
+
+/* ---- プレビュー ---- */
+.preview-wrap {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.preview-label {
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  padding: 9px 14px;
+  background: #fbfaf7;
+  border-bottom: 1px solid var(--line);
+}
+.preview-frame {
+  width: 100%;
+  height: 340px;
+  border: none;
+  background: #fff;
+  display: block;
+}
+
+/* ---- 要約パネル ---- */
+.summary-bar {
+  margin-top: 18px;
+}
+.summary-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+.btn:hover {
+  opacity: 0.88;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+.hint {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.summary-out {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  padding: 16px 18px;
+}
+.summary-out .out-label {
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.summary-out .out-text {
+  font-size: 15px;
+  line-height: 1.85;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.mode-badge {
+  font-size: 10.5px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+/* ---- 種明かし ---- */
+.reveal {
+  margin-top: 14px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #fffdf8;
+}
+.reveal h3 {
+  font-size: 13.5px;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.reveal .method {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 10px 0 0;
+  line-height: 1.8;
+}
+.hidden-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.hidden-reason {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.reveal pre {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.7;
+  background: #2b2926;
+  color: #f1ede4;
+  padding: 12px 14px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+}
+
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  vertical-align: -2px;
+  margin-right: 8px;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer-note {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
