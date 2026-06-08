@@ -340,7 +340,7 @@ export default function Home() {
       </main>
 
       <div className="footer-note">
-        ※ 本ツールは社内検証用です。読み込んだファイルはサーバに保存しません。
+        ※ 本ツールはデモ用です。読み込んだファイルはサーバに保存しません。
       </div>
     </>
   );
